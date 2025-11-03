@@ -129,7 +129,7 @@ These reports help testers, developers, and SEO analysts understand link health 
 
 ---
 
-## ✅ Professional Resume Description
+##
 
 **Broken Link Automation Checker (Python, Selenium, PyTest)**  
 Developed a browser-based automation tool that scans webpages for broken, redirected, and timeout links using Selenium and the Requests API. Implemented command-line URL input, auto-generated HTML/CSV reports, and integrated PyTest for execution. Enhanced debugging by differentiating link statuses using color-coded reporting.
