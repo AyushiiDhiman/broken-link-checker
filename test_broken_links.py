@@ -7,7 +7,7 @@ import time
 
 def test_broken_links():
 
-    # Setup ChromeDriver
+   
     service = Service("drivers/chromedriver.exe")
     driver = webdriver.Chrome(service=service)
 
@@ -17,7 +17,7 @@ def test_broken_links():
     driver.maximize_window()
     time.sleep(2)
 
-    # Find all <a> links
+   
     links = driver.find_elements(By.TAG_NAME, "a")
 
     results = []
@@ -25,7 +25,7 @@ def test_broken_links():
     for link in links:
         href = link.get_attribute("href")
 
-        # Skip empty or JavaScript links
+       
         if href is None or "javascript" in href.lower():
             continue
 
@@ -43,15 +43,15 @@ def test_broken_links():
 
     driver.quit()
 
-    # Save to CSV
+    
     df = pd.DataFrame(results, columns=["URL", "Status", "Code"])
     df.to_csv("reports/broken_links_report.csv", index=False)
 
-    # Final assertion
+   
     broken_count = df[df["Status"] == "BROKEN"].shape[0]
     print(f"Total Broken Links: {broken_count}")
 
-    # Test passes always (or you can assert based on need)
+   
     assert True
 
 
